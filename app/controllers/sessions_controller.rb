@@ -7,9 +7,14 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in user
       params[:session][:remember_me] == "1" ? remember(user) : forget(user)
-      redirect_back_or user
+      flash[:success] = t "controllers.session.flash.success"
+      if user.is_admin
+        redirect_to admin_books_url
+      else
+        redirect_back_or user
+      end
     else
-      flash.now[:danger] = t "session.new.danger"
+      flash.now[:danger] = t "controllers.session.flash.danger"
       render :new
     end
   end

@@ -1,0 +1,14 @@
+<h1><%= t "views.admin.book.index.dashboard" %></h1>
+<% @books.each do |book| %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+    <%= image_tag book.image.url, class: "img-responsive" if book.image? %>
+    <h3> <%= book.title %></h3>
+    <h3> <%= book.author %></h3>
+    <h3> <%= book.number_of_pages %></h3>
+    <h3> <%= book.publish_date %></h3>
+    <h3> <%= book.category %></h3>
+    </div>
+  </div>
+<% end %>
+<%= link_to t("views.admin.book.index.newbook"), new_admin_book_path %>
