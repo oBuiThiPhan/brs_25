@@ -35,16 +35,30 @@ en:
       error:
         message: "The form contains"
         name: "error"
-     static_pages:
-       contact: "This is contact"
-       help: "This is help"
-       home1: "Framgia Books Review System"
-       home:
-         signup: "Sign up"
-     layouts:
-       application:
-         linkhome: "Home"
-         linklogin: "Login"
+    static_pages:
+      contact: "This is contact"
+      help: "This is help"
+      home1: "Framgia Books Review System"
+      home:
+      signup: "Sign up"
+    layouts:
+      application:
+      linkhome: "Home"
+      linklogin: "Login"
+    session:
+      new:
+        login: "Log in"
+        newuser: "New user?"
+        signupnow: "Sign up now!"
+        danger: "Invalid email/password combination. Please log in again!"
+        remember: "Remember me on this computer"
   app:
     bookapp: "Book app"
-
+    home: "Home"
+    help: "Help"
+    profile: "Profile"
+    set: "Setting"
+    login: "Log in"
+    logout: "Log out"
+    user: "Users"
+    account: "Account"
