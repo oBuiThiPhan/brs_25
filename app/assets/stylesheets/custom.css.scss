@@ -42,30 +42,37 @@ input {
   margin-left: 0;
 }
 
- body {
-   padding-top: 60px;
- }
+body {
+  padding-top: 60px;
+}
 
- .center {
-   text-align: center;
- }
+.center {
+  text-align: center;
+}
 
- #logo {
-   float: left;
-   margin-right: 10px;
-   font-size: 1.7em;
-   color: #fff;
-   text-transform: uppercase;
-   letter-spacing: -1px;
-   padding-top: 9px;
-   font-weight: bold;
- }
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
 
- #logo:hover {
-   color: blue;
-   text-decoration: none;
- }
+#logo:hover {
+  color: blue;
+  text-decoration: none;
+}
 
- h1 {
-   color: green;
- }
+h1 {
+  color: green;
+}
+
+span.avatar {
+  margin-top: 10px;
+  input {
+    border: 0;
+  }
+}

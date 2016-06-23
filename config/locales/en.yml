@@ -24,6 +24,10 @@ en:
   users:
     create:
       succee: "Welcome to the Book Framgia app!"
+    update:
+      succee: "Your profile updated!"
+    login:
+      danger: "Please log in!"
   views:
     users:
       new:
@@ -31,6 +35,13 @@ en:
         form:
           confir: "Confirmation"
           submit: "Create my account"
+      edit:
+        title: "Edit my profile"
+        h2: "Update your profile"
+        save: "Save change"
+      avatar:
+        size: "should be less than 5MB"
+        bigsize: "Maximum file size is 5MB. Please choose a smaller file"
     shared:
       error:
         message: "The form contains"
@@ -62,3 +73,4 @@ en:
     logout: "Log out"
     user: "Users"
     account: "Account"
+    logged_in: "Please log in."

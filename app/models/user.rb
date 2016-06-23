@@ -14,13 +14,16 @@ class User < ActiveRecord::Base
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
 
+  mount_uploader :avatar, AvatarUploader
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 
   validates :name, presence: true, length: {maximum: 50}
   validates :email, presence: true,
                     format: {with: VALID_EMAIL_REGEX},
                     uniqueness: {case_sensitive: false}
-  validates :password, presence: true, length: {minimum: 6}
+  validates :password, presence: true, length: {minimum: 6}, allow_nil: true
+  validate :avatar_size
 
   before_save :downcase_email
 
@@ -55,7 +58,15 @@ class User < ActiveRecord::Base
     self.email = email.downcase
   end
 
-  def current_user? user
-    user == current_user
+  def current_user? current_user
+    self == current_user
   end
+
+  private
+  def avatar_size
+    if avatar.size > 5.megabytes
+      errors.add(:avatar, t("views.users.avatar.size"))
+    end
+  end
+
 end
