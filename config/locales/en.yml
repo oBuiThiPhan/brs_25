@@ -28,6 +28,9 @@ en:
       succee: "Your profile updated!"
     login:
       danger: "Please log in!"
+  activerecord:
+    model:
+      category: "category"
   views:
     users:
       new:
@@ -63,6 +66,27 @@ en:
         signupnow: "Sign up now!"
         danger: "Invalid email/password combination. Please log in again!"
         remember: "Remember me on this computer"
+    admin:
+      book:
+        index:
+          dashboard: "DashBoard"
+          newbook: "New book"
+        new:
+          createnewbook: "Create new boook"
+          category: "Category"
+  controllers:
+    admin:
+      login:
+        flash:
+          danger: "Please login as admin"
+      books:
+        create:
+          flash:
+            success: "New book is added"
+    session:
+      flash:
+        success: "Wellcome back"
+        danger: "Wrong email or password"
   app:
     bookapp: "Book app"
     home: "Home"
