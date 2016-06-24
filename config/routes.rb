@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root "sessions#new"
+    resources :categories
     resources :books
   end
 end
