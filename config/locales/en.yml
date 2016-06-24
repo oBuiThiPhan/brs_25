@@ -38,6 +38,8 @@ en:
         form:
           confir: "Confirmation"
           submit: "Create my account"
+      show:
+        nouser: "This user do not exist."
       edit:
         title: "Edit my profile"
         h2: "Update your profile"
