@@ -1,0 +1,25 @@
+<%= form_for [:admin, @book], html: {multipart: true} do |f| %>
+  <%= render partial: "shared/error_messages", locals: {object: @book}  %>
+
+  <span>
+    <%= t("views.admin.book.new.category") %>: <%= f.select :category_id,
+      options_for_select(@categories.collect {|c| [c.title, c.id]})%>
+  </span>
+
+  <%= f.label :title %>
+  <%= f.text_field :title, class: "form-control" %>
+
+  <%= f.label :author %>
+  <%= f.text_field :author, class: "form-control" %>
+
+  <%= f.label :number_of_pages %>
+  <%= f.number_field :number_of_pages, class: "form-control" %>
+
+  <%= f.label :publish_date %>
+  <%= f.date_field :publish_date, class: "form-control" %>
+
+  <%= f.label :image %>
+  <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

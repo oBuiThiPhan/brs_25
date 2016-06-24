@@ -70,19 +70,34 @@ en:
       book:
         index:
           dashboard: "DashBoard"
-          newbook: "New book"
+          newbookbutton: "New book"
+          editbutton: "Edit"
+          book_id: "Id"
+          category: "Category"
+          title: "Title"
+          author: "Author"
+          numberofpage: "Number of pages"
+          publishdate: "Publish Date"
+          adminfunction: "Admin Function"
         new:
           createnewbook: "Create new boook"
+          createbutton: "Add new book"
           category: "Category"
+        edit:
+          updatebook: "Update book"
+          updatebutton: "Save change"
   controllers:
     admin:
       login:
         flash:
           danger: "Please login as admin"
-      books:
+      book:
         create:
           flash:
             success: "New book is added"
+        update:
+          flash:
+            success: "Book is updated"
     session:
       flash:
         success: "Wellcome back"
