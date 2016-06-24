@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :books, only: [:index, :show]
+  resources :requests, except: [:show, :edit, :update]
 
   namespace :admin do
     root "sessions#new"
