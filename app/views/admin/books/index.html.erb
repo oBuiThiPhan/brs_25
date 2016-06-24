@@ -1,14 +1,32 @@
 <h1><%= t "views.admin.book.index.dashboard" %></h1>
-<% @books.each do |book| %>
-  <div class="panel panel-default">
-    <div class="panel-body">
-    <%= image_tag book.image.url, class: "img-responsive" if book.image? %>
-    <h3> <%= book.title %></h3>
-    <h3> <%= book.author %></h3>
-    <h3> <%= book.number_of_pages %></h3>
-    <h3> <%= book.publish_date %></h3>
-    <h3> <%= book.category %></h3>
-    </div>
-  </div>
-<% end %>
-<%= link_to t("views.admin.book.index.newbook"), new_admin_book_path %>
+
+<table class="table table-hover">
+  <tr>
+    <th><%= t "views.admin.book.index.bood_id" %></th>
+    <th><%= t "views.admin.book.index.category" %></th>
+    <th><%= t "views.admin.book.index.title" %></th>
+    <th><%= t "views.admin.book.index.author" %></th>
+    <th><%= t "views.admin.book.index.numberofpage" %></th>
+    <th><%= t "views.admin.book.index.publishdate" %></th>
+    <th><%= t "views.admin.book.index.adminfunction" %></th>
+  </tr>
+  <% @books.each do |book| %>
+    <tr>
+      <td> <%= book.id %> </td>
+      <td> <%= book.category.title %> </td>
+      <td> <%= book.title %> </td>
+      <td> <%= book.author %> </td>
+      <td> <%= book.number_of_pages %> </td>
+      <td> <%= book.publish_date %> </td>
+      <td>
+        <span>
+          <%= link_to t("views.admin.book.index.editbutton"), edit_admin_book_url(book),
+            class:"btn btn-info" %>
+        </span>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to t("views.admin.book.index.newbookbutton"), new_admin_book_path,
+  class: "btn btn-info" %>
