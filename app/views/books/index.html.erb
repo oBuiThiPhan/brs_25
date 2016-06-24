@@ -1,0 +1,13 @@
+<h1><%= t"views.book.index.list books"%></h1>
+<%= will_paginate %>
+  <ul class="books">
+    <% @books.each do |book| %>
+      <li>
+        <%= book.title %>
+        <%= book.author %>
+        <%= book.number_of_pages %>
+        <%= book.publish_date %>
+      </li>
+    <% end %>
+  </ul>
+<%= will_paginate %>
