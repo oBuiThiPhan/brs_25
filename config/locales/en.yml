@@ -30,7 +30,10 @@ en:
       danger: "Please log in!"
   activerecord:
     model:
-      category: "category"
+      book: "Book"
+      user: "User"
+      category: "Category"
+
   views:
     users:
       new:
@@ -73,6 +76,7 @@ en:
         index:
           dashboard: "DashBoard"
           newbookbutton: "New book"
+          deletebutton: "Delete"
           editbutton: "Edit"
           book_id: "Id"
           category: "Category"
@@ -81,6 +85,7 @@ en:
           numberofpage: "Number of pages"
           publishdate: "Publish Date"
           adminfunction: "Admin Function"
+          deleteconfirm: "Are your sure?"
         new:
           createnewbook: "Create new boook"
           createbutton: "Add new book"
@@ -89,6 +94,14 @@ en:
           updatebook: "Update book"
           updatebutton: "Save change"
   controllers:
+    flash:
+      common:
+        create_success: '%{objects} is created'
+        create_error: "%{objects} is not"
+        update_success: "%{objects} is updated"
+        update_error: "%{objects} is not updated"
+        destroy_success: "%{objects} is deleted"
+        destroy_error: "%{objects} is not deleted"
     admin:
       login:
         flash:
@@ -100,6 +113,10 @@ en:
         update:
           flash:
             success: "Book is updated"
+        destroy:
+          flash:
+            success: "Book is destroyed"
+            danger: "Book is not destroyed yet"
     session:
       flash:
         success: "Wellcome back"

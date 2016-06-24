@@ -13,7 +13,8 @@ class Admin::BooksController < ApplicationController
   def create
     @book = Book.new book_params
     if @book.save
-      flash[:success] = t "controllers.admin.book.create.flash.success"
+      flash[:success] = t "controllers.flash.common.create_success",
+        objects: t("activerecord.model.book")
       redirect_to admin_books_url
     else
       render :new
@@ -31,6 +32,18 @@ class Admin::BooksController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @book = Book.find_by id: params[:id]
+    if @book && @book.destroy
+      flash[:success] = t "controllers.flash.common.destroy_success",
+        objects: t("activerecord.model.book")
+    else
+      flash[:danger] = t "controllers.flash.common.destroy_error",
+        objects: t("activerecord.model.book")
+    end
+    redirect_to admin_books_url
   end
 
   private
