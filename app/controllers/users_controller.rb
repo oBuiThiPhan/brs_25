@@ -23,7 +23,8 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       log_in @user
-      flash[:success] = t "users.create.succee"
+      flash[:success] = t "controllers.flash.common.create_success",
+        objects: t("activerecord.model.user")
       redirect_to @user
     else
       render :new
@@ -37,7 +38,8 @@ class UsersController < ApplicationController
   def update
     @user = User.find_by id: params[:id]
     if @user.update_attributes user_params
-      flash[:success] = t "users.update.succee"
+      flash[:success] = t "controllers.flash.common.update_success",
+        objects: t("activerecord.model.user")
       redirect_to @user
     else
       render :edit
