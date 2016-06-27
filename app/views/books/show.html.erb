@@ -1,0 +1,27 @@
+<div class="col-md-4">
+  <%= image_tag @book.image.url(:thumb) if @book.image? %>
+</div>
+<div class="col-md-8">
+  <table>
+    <tr>
+      <td><h3><%= t "views.book.show.title" %></h3></td>
+      <td><strong><%= @book.title %></strong></td>
+    </tr>
+    <tr>
+      <td><h3><%= t "views.book.show.author" %></h3></td>
+      <td><strong><%= @book.author %></strong></td>
+    </tr>
+    <tr>
+      <td><h3><%= t "views.book.show.category" %></h3></td>
+      <td><strong><%= @book.category.title %></strong></td>
+    </tr>
+    <tr>
+      <td><h3><%= t "views.book.show.numberpages" %></h3></td>
+      <td><strong><%= @book.number_of_pages %></strong></td>
+    </tr>
+    <tr>
+      <td><h3><%= t "views.book.show.publishdate" %></h3></td>
+      <td><strong> <%= @book.publish_date %></strong></td>
+    </tr>
+  </table>
+</div>

@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get "books/index"
 
   root "static_pages#home"
   get "help" => "static_pages#help"
@@ -11,7 +10,7 @@ Rails.application.routes.draw do
   delete "logout" => "sessions#destroy"
 
   resources :users
-  resources :books, only: [:index]
+  resources :books, only: [:index, :show]
 
   namespace :admin do
     root "sessions#new"
