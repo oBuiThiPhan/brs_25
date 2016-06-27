@@ -93,6 +93,22 @@ en:
         edit:
           updatebook: "Update book"
           updatebutton: "Save change"
+      category:
+        index:
+          dashboard: "DashBoard"
+          title: "Name"
+          newcategorybutton: "New category"
+          editbutton: "Edit"
+          deletebutton: "Delete"
+          adminfunction: "Admin Function"
+          deleteconfirm: "Are your sure?"
+        new:
+          createnewcategory: "Create new category"
+          createbutton: "Add new category"
+          category: "Category"
+        edit:
+          updatebook: "Update category"
+          updatebutton: "Save change"
   controllers:
     flash:
       common:
