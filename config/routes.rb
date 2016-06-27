@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   namespace :admin do
     root "sessions#new"
     resources :books
+    resources :users, only: [:index, :destroy]
   end
 end
