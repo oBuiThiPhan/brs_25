@@ -35,6 +35,13 @@ en:
       category: "Category"
 
   views:
+    book:
+      show:
+        title: "Title: "
+        author: "Author: "
+        numberpages: "Pages: "
+        publishdate: "Publish date: "
+        category: "Category: "
     users:
       new:
         signup: "Signup"
