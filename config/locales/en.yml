@@ -72,6 +72,10 @@ en:
         danger: "Invalid email/password combination. Please log in again!"
         remember: "Remember me on this computer"
     admin:
+      user:
+        index:
+          deletebutton: "Delete"
+          deleteconfirm: "Are you sure?"
       book:
         index:
           dashboard: "DashBoard"
