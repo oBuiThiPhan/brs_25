@@ -48,12 +48,13 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit :name, :email, :password, :password_confirmation, :avatar
+    params.require(:user).permit :name, :email, :password,
+      :password_confirmation, :avatar
   end
 
   def correct_user
     @user = User.find_by id: params[:id]
-    redirect_to root_url unless @user.current_user? current_user
+    redirect_to root_url unless @user.is_user? current_user
   end
 
 end

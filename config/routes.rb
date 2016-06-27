@@ -9,9 +9,17 @@ Rails.application.routes.draw do
   post "login" => "sessions#create"
   delete "logout" => "sessions#destroy"
 
-  resources :users
   resources :books, only: [:index, :show]
+
   resources :requests, except: [:show, :edit, :update]
+
+  resources :users
+  resources :users do
+    get "/:relationship", on: :member,
+      :to => "relationships#index", :as => :relationships
+  end
+
+  resources :relationships, only: [:create, :destroy]
 
   namespace :admin do
     root "sessions#new"

@@ -74,6 +74,13 @@ en:
       error:
         message: "The form contains"
         name: "error"
+      stats:
+        follow: "Follow"
+        unfollow: "Unfollow"
+        viewprofile: "view my profile"
+        title:
+          following: "Following"
+          followers: "Followers"
     static_pages:
       contact: "This is contact"
       help: "This is help"
