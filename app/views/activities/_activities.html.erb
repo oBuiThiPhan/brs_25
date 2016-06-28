@@ -1,0 +1,30 @@
+<div class="recently-actions">
+  <% activities.each do |activity| %>
+    <div class="recently-action">
+      <span>
+
+        <%= image_tag activity.owner.avatar.url(:thumb),
+          size: Settings.activity.avatar_size, class: "img-rounded" %>
+        <%= link_to activity.owner.name, activity.owner %>
+
+        <%= activity.message %>
+
+        <% if activity.target.respond_to? :avatar %>
+          <%= image_tag activity.target.avatar.url(:thumb),
+          size: Settings.activity.avatar_size, class: "img-rounded" %>
+        <% end %>
+
+        <% if activity.target.respond_to? :image %>
+          <%= image_tag activity.target.image.url(:thumb),
+          size: Settings.activity.avatar_size, class: "img-rounded" %>
+        <% end %>
+
+        <%= link_to activity.target_name, activity.target_path %>
+
+        <span class="time-ago-in-words">
+          <%= time_ago_in_words(activity.created_at) %> <%= t("views.activities.ago") %>
+        </span>
+      </span>
+    </div>
+  <% end %>
+</div>

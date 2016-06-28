@@ -1,7 +1,6 @@
 class Mark < ActiveRecord::Base
   include ActivityLog
   enum mark_type: [:reading, :read, :favorite]
-
   belongs_to :user
   belongs_to :book
 
