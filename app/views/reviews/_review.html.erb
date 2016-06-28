@@ -1,3 +1,6 @@
-<%= review.rating %>
-<%= review.content %>
-<br>
+<div><%= review.rating %></div>
+<div><%= review.content %></div>
+<div>
+  <%= link_to t("views.book.show.edit"),
+    edit_book_review_path(review.book, review) %>
+</div>
