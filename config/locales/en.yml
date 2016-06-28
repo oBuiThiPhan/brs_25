@@ -140,6 +140,14 @@ en:
         edit:
           updatebook: "Update category"
           updatebutton: "Save change"
+      requests:
+        index:
+          dashboard: "Request dashboard"
+          id: "Id"
+          book_title: "Book Title"
+          book_author: "Book author"
+          content: "Content"
+          delete_confirm: "Are you sure?"
   controllers:
     flash:
       common:
@@ -177,6 +185,7 @@ en:
     login: "Log in"
     logout: "Log out"
     user: "Users"
+    request: "Requests"
     account: "Account"
     logged_in: "Please log in."
     request: "Requests"
