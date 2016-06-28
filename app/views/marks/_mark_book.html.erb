@@ -1,0 +1,10 @@
+<div>
+  <% if @marked_book && @marked_book.mark_type.present? %>
+    <h2>
+      <%= t "userbook.marked" %>
+      <%= @marked_book.mark_type %>
+    </h2>
+  <% else %>
+    <%= render "marks/mark_form" %>
+  <% end %>
+</div>
