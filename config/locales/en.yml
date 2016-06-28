@@ -35,6 +35,9 @@ en:
       request: "Request"
 
   views:
+    request:
+      new:
+        newreview: "New Review"
     book:
       show:
         title: "Title: "
@@ -42,6 +45,7 @@ en:
         numberpages: "Pages: "
         publishdate: "Publish date: "
         category: "Category: "
+        addreview: "Create Review"
     users:
       new:
         signup: "Signup"

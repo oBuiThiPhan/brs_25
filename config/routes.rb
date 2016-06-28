@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   post "login" => "sessions#create"
   delete "logout" => "sessions#destroy"
 
-  resources :books, only: [:index, :show]
+  resources :users
+  resources :books, only: [:index, :show] do
+    resources :reviews, only: [:create, :new]
+  end
 
   resources :requests, except: [:show, :edit, :update]
 
