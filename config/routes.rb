@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :books, only: [:index, :show] do
-    resources :reviews, only: [:create, :new]
+    resources :reviews, except: [:index, :show, :destroy]
   end
 
   resources :requests, except: [:show, :edit, :update]
