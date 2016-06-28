@@ -147,6 +147,7 @@ en:
           book_title: "Book Title"
           book_author: "Book author"
           content: "Content"
+          deletebutton: "Delete"
           delete_confirm: "Are you sure?"
   controllers:
     flash:
