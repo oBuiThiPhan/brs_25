@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     root "sessions#new"
     resources :categories
     resources :books
-    resources :requests, only: [:index]
+    resources :requests, only: [:index, :destroy]
     resources :users, only: [:index, :destroy]
   end
 end
