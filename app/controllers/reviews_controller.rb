@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :load_book
-  before_action :load_review, only: [:edit, :update]
+  before_action :load_review, only: [:edit, :update, :destroy]
 
   def new
     @review = @book.reviews.build
@@ -24,6 +24,11 @@ class ReviewsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @review.destroy
+    redirect_to @book
   end
 
   private
