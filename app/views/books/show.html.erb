@@ -1,5 +1,6 @@
 <div class="col-md-4">
   <%= image_tag @book.image.url(:thumb) if @book.image? %>
+  <%= render "marks/mark_book" %>
 </div>
 <div class="col-md-8">
   <table>

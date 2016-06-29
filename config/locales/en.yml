@@ -20,6 +20,14 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  userbook:
+    marked: "Marked as: "
+    marktype:
+      reading: "reading"
+      read: "read"
+    create:
+      success: "You marked this book success"
+      update: "Update mark success."
   users:
     create:
       succee: "Welcome to the Book Framgia app!"
@@ -50,8 +58,8 @@ en:
         addreview: "Create Review"
         edit: "Edit"
         destroy: "Delete"
-        delete_confirm: "Are you sure"
-
+        markas: "Mark as..."
+        marked: "This book is mark as "
     users:
       new:
         signup: "Signup"
