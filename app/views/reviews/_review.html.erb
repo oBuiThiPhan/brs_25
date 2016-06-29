@@ -2,5 +2,9 @@
 <div><%= review.content %></div>
 <div>
   <%= link_to t("views.book.show.edit"),
-    edit_book_review_path(review.book, review) %>
+    edit_book_review_path(review.book, review), class: "btn btn-success" %>
+  <%= link_to t("views.book.show.destroy"),
+    book_review_path(review.book, review),
+    method: :delete, data: {confirm: t("views.book.show.delete_confirm")},
+    class: "btn btn-success" %>
 </div>

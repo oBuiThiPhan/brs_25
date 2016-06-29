@@ -28,7 +28,8 @@
 <div class="row">
   <div class="col-md-4">
     <div>
-      <%= link_to t("views.book.show.addreview"), new_book_review_path(@book) %>
+      <%= link_to t("views.book.show.addreview"), new_book_review_path(@book),
+        class: "btn btn-info" %>
     </div>
     <%= render @book.reviews %>
   </div>

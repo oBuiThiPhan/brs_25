@@ -49,6 +49,9 @@ en:
         category: "Category: "
         addreview: "Create Review"
         edit: "Edit"
+        destroy: "Delete"
+        delete_confirm: "Are you sure"
+
     users:
       new:
         signup: "Signup"
