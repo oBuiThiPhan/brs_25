@@ -46,8 +46,10 @@ en:
     reviews:
       new:
         newreview: "New Review"
+        newcomment: "New Comment"
       edit:
         editreview: "Edit Review"
+        editcomment: "Edit Comment"
     book:
       show:
         title: "Title: "

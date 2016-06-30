@@ -16,6 +16,17 @@ class CommentsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @comment.update comment_params
+      redirect_to @book
+    else
+      render :edit
+    end
+  end
+
   private
   def comment_params
     params.require(:comment).permit :content

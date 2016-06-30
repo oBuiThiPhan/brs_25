@@ -1,0 +1,7 @@
+<h1><%= t"views.reviews.edit.editcomment" %></h1>
+<%= form_for [@book, @review, @comment] do |f| %>
+
+  <%= f.text_area :content %>
+  <%= f.submit :Update %>
+
+<% end %>
