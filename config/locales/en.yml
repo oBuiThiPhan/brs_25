@@ -58,6 +58,7 @@ en:
         addreview: "Create Review"
         edit: "Edit"
         destroy: "Delete"
+        delete_confirm: "Are you sure"
         markas: "Mark as..."
         marked: "This book is mark as "
     users:

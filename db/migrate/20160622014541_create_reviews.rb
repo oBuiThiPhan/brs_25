@@ -3,7 +3,7 @@ class CreateReviews < ActiveRecord::Migration
     create_table :reviews do |t|
       t.integer :user_id
       t.integer :book_id
-      t.string :content
+      t.text :content
       t.float :rating
 
       t.timestamps null: false

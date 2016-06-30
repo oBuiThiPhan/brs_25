@@ -1,6 +1,11 @@
 <div><%= review.rating %></div>
 <div><%= review.content %></div>
 <div>
+  <%= link_to t("views.book.show.comment"),
+    new_book_review_comment_path(review.book, review) %>
+</div>
+<%= render review.comments %>
+<div>
   <%= link_to t("views.book.show.edit"),
     edit_book_review_path(review.book, review), class: "btn btn-success" %>
   <%= link_to t("views.book.show.destroy"),
