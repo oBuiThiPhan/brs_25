@@ -1,0 +1,14 @@
+<h3><%= t "users.show.reading" %></h3>
+<% if @reading_books.any? %>
+  <% @reading_books.each do |reading_book| %>
+    <li>
+      <%= link_to reading_book do %>
+        <%= image_tag reading_book.image.url,
+          size: Settings.book.history.size if reading_book.image? %>
+        <strong>
+          <%= reading_book.title %>
+        </strong>
+      <% end %>
+    </li>
+  <% end %>
+<% end %>

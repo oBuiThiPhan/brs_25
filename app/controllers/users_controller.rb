@@ -17,6 +17,8 @@ class UsersController < ApplicationController
       flash[:warning] = t "views.users.show.nouser"
       redirect_to root_url
     end
+    @reading_books = Book.where(id: Mark.reading.pluck(:book_id))
+    @read_books = Book.where(id: Mark.read.pluck(:book_id))
   end
 
   def create

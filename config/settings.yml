@@ -1,1 +1,11 @@
 per_page: 3
+
+mark:
+  mark_type:
+    reading: 0
+    read: 1
+    favorite: 2
+
+book:
+  history:
+    size: "50x80"
