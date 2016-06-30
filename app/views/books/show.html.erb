@@ -24,6 +24,12 @@
       <td><h3><%= t "views.book.show.publishdate" %></h3></td>
       <td><strong> <%= @book.publish_date %></strong></td>
     </tr>
+    <tr>
+      <td><h3><%= t "views.book.show.ratescore" %></h3></td>
+      <td>
+        <strong> <%= number_with_precision @book.rate_score, precision: 1 %> </strong>
+      </td>
+    </tr>
   </table>
   <div class="row">
     <div class="col-md-4">

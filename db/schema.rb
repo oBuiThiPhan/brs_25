@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20160629074306) do
     t.string   "author"
     t.integer  "number_of_pages"
     t.datetime "publish_date"
-    t.float    "rate_score"
+    t.decimal  "rate_score"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "image"
@@ -88,7 +88,7 @@ ActiveRecord::Schema.define(version: 20160629074306) do
     t.integer  "user_id"
     t.integer  "book_id"
     t.text     "content"
-    t.float    "rating"
+    t.decimal  "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
