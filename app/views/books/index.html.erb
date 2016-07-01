@@ -1,13 +1,9 @@
-<h1><%= t"views.book.index.list books"%></h1>
-<%= will_paginate %>
-  <ul class="books">
-    <% @books.each do |book| %>
-      <li>
-        <%= link_to book.title, book %>
-        <%= book.author %>
-        <%= book.number_of_pages %>
-        <%= book.publish_date %>
-      </li>
-    <% end %>
-  </ul>
-<%= will_paginate %>
+<div class="row">
+  <div class="col-md-8">
+    <h1><%= t"views.book.index.list books"%></h1>
+  </div>
+  <%= render "search_form" %>
+</div>
+<div id="books">
+  <%= render "book" %>
+</div>

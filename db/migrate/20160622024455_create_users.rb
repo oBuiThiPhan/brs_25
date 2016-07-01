@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :password
       t.string :password_confirmation
       t.string :avatar
-      t.boolean :is_admin
+      t.boolean :is_admin, default: false
 
       t.timestamps null: false
     end

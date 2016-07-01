@@ -20,6 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  books:
+    index:
+      warning: "No result for your search!"
   userbook:
     marked: "Marked as: "
     marktype:
@@ -60,6 +63,11 @@ en:
         editreview: "Edit Review"
         editcomment: "Edit Comment"
     book:
+      index:
+        search: "Search"
+        valuesearch: "Title, author, category..."
+        by: "by: "
+        ratescore: "Rate score: "
       show:
         title: "Title: "
         author: "Author: "

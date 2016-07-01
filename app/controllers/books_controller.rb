@@ -2,8 +2,11 @@ class BooksController < ApplicationController
   before_action :logged_in_user
 
   def index
-    @books = Book.order("id DESC").paginate page: params[:page],
-      per_page: Settings.per_page
+    @books = Book.search(params[:search]).order("title")
+      .paginate page: params[:page], per_page: Settings.per_page
+    if @books.empty?
+      flash[:warning] = t ".warning"
+    end
   end
 
   def show
