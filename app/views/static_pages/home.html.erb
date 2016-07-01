@@ -1,12 +1,10 @@
 <div class="panel panel-heading">
-   <center>
-     <h1><%= t "views.static_pages.home1" %></h1>
-   </center>
-   </div>
-   <div class="panel-body">
-   <center>
-     <h2><%= t "views.static_pages.home.team HSP" %></h2>
-     <br/>
-     <%= link_to t("views.static_pages.sign up"), signup_path, class: "btn btn-lg btn-primary" %>
-   </center>
- </div>
+  <center>
+    <h1>
+      <%= t "views.static_pages.home1" %>
+      <%= link_to t("views.static_pages.sign up"), signup_path,
+        class: "btn btn-lg btn-primary" %>
+    </h1>
+  </center>
+</div>
+

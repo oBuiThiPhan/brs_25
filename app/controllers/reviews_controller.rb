@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :load_book
+  before_action :logged_in_user, :load_book
   before_action :load_review, only: [:edit, :update, :destroy]
 
   def new
@@ -33,7 +33,7 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit :rating, :content
+    params.require(:review).permit :user_id, :rating, :content
   end
 
   def load_book

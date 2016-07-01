@@ -177,6 +177,7 @@ en:
           content: "Content"
           deletebutton: "Delete"
           delete_confirm: "Are you sure?"
+
   controllers:
     flash:
       common:
@@ -205,6 +206,22 @@ en:
       flash:
         success: "Wellcome back"
         danger: "Wrong email or password"
+
+  model:
+    activity:
+      banned: "(banned)"
+      deleted: "(deleted)"
+      emptyurl: "#"
+      message:
+        follow: " followed "
+        read: "read"
+        reading: "is reading"
+        favorite: "marked a favorite book on"
+        review: " wrote a review on "
+        comment: "wrote a comment on"
+    review:
+      name: "Review"
+
   app:
     bookapp: "Book app"
     home: "Home"
