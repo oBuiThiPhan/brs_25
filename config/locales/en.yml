@@ -29,6 +29,11 @@ en:
       success: "You marked this book success"
       update: "Update mark success."
   users:
+    show:
+      reading: "Reading"
+      read: "Read"
+      favorite: "Favorited"
+      history: "Reading history"
     create:
       succee: "Welcome to the Book Framgia app!"
     update:
