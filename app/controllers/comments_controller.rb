@@ -27,6 +27,11 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment.destroy
+    redirect_to @book
+  end
+
   private
   def comment_params
     params.require(:comment).permit :content

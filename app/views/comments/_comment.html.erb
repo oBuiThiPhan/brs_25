@@ -1,3 +1,6 @@
 <div><%= comment.content %></div>
 <%= link_to t("views.book.show.edit"),
   edit_book_review_comment_path(comment.review.book, comment.review, comment) %>
+<%= link_to t("views.book.show.destroy"),
+  book_review_comment_path(comment.review.book, comment.review, comment),
+  method: :delete, data: {confirm: t("views.book.show.delete_comment")} %>

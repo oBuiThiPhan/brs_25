@@ -61,7 +61,8 @@ en:
         addreview: "Create Review"
         edit: "Edit"
         destroy: "Delete"
-        delete_confirm: "Are you sure"
+        delete_confirm: "Are you sure delete this review"
+        delete_comment: "Are you sure delete this comment"
         markas: "Mark as..."
         marked: "This book is mark as "
     users:
