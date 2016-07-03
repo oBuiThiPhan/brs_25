@@ -50,6 +50,8 @@ en:
   views:
     activities:
       ago: "ago"
+      you: "You"
+      recent_action: "Recently actions on page:"
     reviews:
       new:
         newreview: "New Review"
