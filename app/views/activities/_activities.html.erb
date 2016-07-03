@@ -21,10 +21,15 @@
         <% end %>
 
         <%= link_to activity.target_name, activity.target_path %>
-
         <span class="time-ago-in-words">
-          <%= time_ago_in_words(activity.created_at) %> <%= t("views.activities.ago") %>
+          <%= time_ago_in_words(activity.created_at) %>
+          <%= t("views.activities.ago") %>
         </span>
+      </span>
+
+      <span class="like-area">
+        <%= render partial: "like_activities/like_form",
+          locals: {activity: activity} %>
       </span>
     </div>
   <% end %>

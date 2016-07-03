@@ -1,0 +1,6 @@
+$('#activity_<%=@activity.id%>-like_button').html('<%= escape_javascript(
+  render partial: "like_activities/unlike_button",
+  locals: {activity: @activity}
+  ) %>');
+$('#activity_<%=@activity.id%>-like_stats')
+  .html('<%= @activity.like_activities.count %>');

@@ -1,0 +1,5 @@
+<%= link_to user_like_activity_path(current_user, current_user.like_activities
+  .find_by(activity_id: activity.id), like_activity: {activity_id: activity.id}),
+  method: :delete, remote: :true do %>
+  <i class="unlike-button glyphicon glyphicon-thumbs-up"></i>
+<% end %>

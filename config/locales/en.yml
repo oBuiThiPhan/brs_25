@@ -55,6 +55,7 @@ en:
       ago: "ago"
       you: "You"
       recent_action: "Recently actions on page:"
+      likes: "likes"
     reviews:
       new:
         newreview: "New Review"
