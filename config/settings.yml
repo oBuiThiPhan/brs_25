@@ -9,3 +9,6 @@ mark:
 book:
   history:
     size: "50x80"
+
+activity:
+  avatar_size: "30x30"
