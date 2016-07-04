@@ -27,7 +27,7 @@
     <tr>
       <td><h3><%= t "views.book.show.ratescore" %></h3></td>
       <td>
-        <strong> <%= number_with_precision @book.rate_score, precision: 1 %> </strong>
+        <div class="average-review-rating" data-score="<%= @book.rate_score %>"></div>
       </td>
     </tr>
   </table>

@@ -9,8 +9,12 @@ class ReviewsController < ApplicationController
   def create
     @review = @book.reviews.build review_params
     if @review.save
+      flash[:success] = t "controllers.flash.common.create_success",
+        objects: t("activerecord.model.review")
       redirect_to @book
     else
+      flash[:danger] = t "controllers.flash.common.create_error",
+        objects: t("activerecord.model.review")
       render :new
     end
   end
@@ -20,14 +24,24 @@ class ReviewsController < ApplicationController
 
   def update
     if @review.update review_params
+      flash[:success] = t"controllers.flash.common.update_success",
+        objects: t("activerecord.model.review")
       redirect_to @book
     else
+      flash[:danger] = t "controllers.flash.common.update_error",
+        objects: t("activerecord.model.review")
       render :edit
     end
   end
 
   def destroy
-    @review.destroy
+    if @review && @review.destroy
+      flash[:success] = t "controllers.flash.common.destroy_success",
+        objects: t("activerecord.model.review")
+    else
+      flash[:danger] = t "controllers.flash.common.destroy_error",
+        objects: t("activerecord.model.review")
+    end
     redirect_to @book
   end
 

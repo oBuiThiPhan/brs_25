@@ -1,8 +1,9 @@
 <h1><%= t"views.reviews.edit.editreview"%></h1>
 
 <%= form_for [@book, @review] do |f| %>
-  <%= f.label :rating %>
-  <%= f.text_field :rating %>
+  <div id="rating-form">
+    <label><%= t("views.reviews.new.rating") %></label>
+  </div>
   <%= f.label :content %>
   <%= f.text_field :content %>
   <%= f.submit :Update %>
