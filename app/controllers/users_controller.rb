@@ -19,8 +19,9 @@ class UsersController < ApplicationController
     end
     @activities = @user.activities.order("created_at desc").limit(100)
       .paginate page: params[:page], per_page: Settings.per_page
-    @reading_books = Book.where(id: Mark.reading.pluck(:book_id))
-    @read_books = Book.where(id: Mark.read.pluck(:book_id))
+    @reading_books = Book.reading_books(@user)
+    @read_books = Book.read_books(@user)
+    @favorite_books = Book.favorite_books(@user)
   end
 
   def create

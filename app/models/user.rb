@@ -80,5 +80,4 @@ class User < ActiveRecord::Base
       errors.add(:avatar, t("views.users.avatar.size"))
     end
   end
-
 end
