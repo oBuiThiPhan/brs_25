@@ -6,7 +6,7 @@ class CreateBooks < ActiveRecord::Migration
       t.string :author
       t.integer :number_of_pages
       t.datetime :publish_date
-      t.decimal :rate_score
+      t.decimal :rate_score, default: 0.0
 
       t.timestamps null: false
     end

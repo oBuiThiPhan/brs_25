@@ -69,7 +69,8 @@ en:
     book:
       index:
         search: "Search"
-        valuesearch: "Title, author, category..."
+        valuesearch: "Title, author, category"
+        ratesearch: "Rate score"
         by: "by: "
         ratescore: "Rate score: "
       show:

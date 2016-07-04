@@ -2,9 +2,9 @@ class BooksController < ApplicationController
   before_action :logged_in_user
 
   def index
-    @books = Book.search(params[:search]).order("title")
+    @books = Book.search(params[:search], params[:rate_score]).order("title")
       .paginate page: params[:page], per_page: Settings.per_page
-    if @books.empty?
+    if @books.blank?
       flash[:warning] = t ".warning"
     end
   end

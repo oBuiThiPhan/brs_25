@@ -28,9 +28,9 @@ ActiveRecord::Schema.define(version: 20160629074306) do
     t.string   "author"
     t.integer  "number_of_pages"
     t.datetime "publish_date"
-    t.decimal  "rate_score"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.decimal  "rate_score",      default: 0.0
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.string   "image"
   end
 
