@@ -9,7 +9,9 @@
 </div>
 <div class="row">
   <div class="col-md-5 col-md-offset-7">
-    <center> <h4> Recently actions on page: </h4> </center>
-    <%= render partial: "activities/activities", locals: {activities: @activities} %>
+    <center> <%= t "views.activities.recent_action" %> </center>
+    <%= render partial: "activities/activities",
+      locals: {activities: @activities} %>
+    <%= will_paginate @activities %>
   </div>
 </div>
