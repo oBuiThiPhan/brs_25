@@ -18,6 +18,8 @@ class RequestsController < ApplicationController
         objects: t("activerecord.model.request")
       redirect_to requests_url
     else
+      flash[:danger] = t "controllers.flash.common.create_error",
+        objects: t("activerecord.model.request")
       render :new
     end
   end

@@ -10,8 +10,12 @@ class CommentsController < ApplicationController
   def create
     @comment = @review.comments.build comment_params
     if @comment.save
+      flash[:success] = t "controllers.flash.common.create_success",
+        objects: t("activerecord.model.comment")
       redirect_to @book
     else
+      flash[:danger] = t "controllers.flash.common.create_error",
+        objects: t("activerecord.model.comment")
       render :new
     end
   end
@@ -21,14 +25,24 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update comment_params
+      flash[:success] = t "controllers.flash.common.update_success",
+        objects: t("activerecord.model.comment")
       redirect_to @book
     else
+      flash[:danger] = t "controllers.flash.common.update_error",
+        objects: t("activerecord.model.comment")
       render :edit
     end
   end
 
   def destroy
-    @comment.destroy
+    if @comment && @comment.destroy
+      flash[:success] = t "controllers.flash.common.destroy_success",
+        objects: t("activerecord.model.comment")
+    else
+      flash[:danger] = t "controllers.flash.common.destroy_error",
+        objects: t("activerecord.model.comment")
+    end
     redirect_to @book
   end
 

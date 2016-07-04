@@ -49,6 +49,8 @@ en:
       user: "User"
       category: "Category"
       request: "Request"
+      review: "Review"
+      comment: "Comment"
 
   views:
     activities:
@@ -58,6 +60,7 @@ en:
       likes: "likes"
     reviews:
       new:
+        rating: "Rating"
         newreview: "New Review"
         newcomment: "New Comment"
       edit:
