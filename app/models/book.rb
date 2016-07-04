@@ -26,4 +26,5 @@ class Book < ActiveRecord::Base
       all
     end
   end
+
 end

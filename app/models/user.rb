@@ -29,6 +29,8 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
+  scope :not_is_admin, ->{where is_admin: false}
+
   def User.digest string
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
       BCrypt::Engine.cost
