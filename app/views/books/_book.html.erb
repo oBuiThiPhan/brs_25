@@ -1,0 +1,19 @@
+<div class="col-md-10">
+  <ul class="books">
+    <% @books.each do |book| %>
+      <div class="row">
+        <div class="col-md-2">
+          <%= image_tag book.image.url,
+            size: Settings.book.history.size if book.image? %>
+        </div>
+        <div class="col-md-10">
+          <h3><%= link_to book.title, book %></h3>
+          <%= t "views.book.index.by" %><%= book.author %><br>
+          <%= t "views.book.index.ratescore" %><%= book.rate_score %>
+        </div>
+      </div>
+      <br>
+    <% end %>
+  </ul>
+  <%= will_paginate %>
+</div>

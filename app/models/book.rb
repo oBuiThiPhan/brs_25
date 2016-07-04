@@ -14,4 +14,16 @@ class Book < ActiveRecord::Base
     scope :"#{name}_books",
     ->(user){where(id: Mark.send(name).where(user_id: user.id).pluck(:book_id))}
   end
+
+  def self.search search
+    if search
+      joins(:category).where('books.title LIKE :getsearch
+        OR books.author LIKE :getsearch
+        OR categories.title LIKE :getsearch
+        OR books.rate_score LIKE :getsearch',
+        getsearch: "%#{search}%")
+    else
+      all
+    end
+  end
 end

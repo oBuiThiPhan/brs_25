@@ -1,0 +1,10 @@
+ <div class="col-md-4 divpadding">
+  <%= form_tag current_user.is_admin? ? admin_books_path : books_path,
+    method: :get do %>
+
+    <%= text_field_tag :search, params[:search],
+      placeholder: t("views.book.index.valuesearch") %>
+    <%= submit_tag t("views.book.index.search"), class: "btn btn-primary" %>
+
+  <% end %>
+</div>
