@@ -18,13 +18,8 @@
       <%= render "follow_form" if logged_in? %>
     </div>
   </div>
-  <div class="col-md-3">
+  <div class="col-md-4">
     <%= render "list_reading_history" %>
   </div>
-  <div class="col-md-5">
-    <center> <h4> <%= t "views.activities.recent_action" %> </h4> </center>
-    <%= render partial: "activities/activities",
-      locals: {activities: @activities} %>
-    <%= will_paginate @activities %>
-  </div>
 </div>
+

@@ -7,12 +7,11 @@ class Mark < ActiveRecord::Base
   validates :user, presence: true
   validates :book, presence: true
 
-  scope :reading, ->{
-    joins(:user).where mark_type: Settings.mark.mark_type.reading}
-  scope :read, ->{
-    joins(:user).where mark_type: Settings.mark.mark_type.read}
-
   after_save :create_mark_activity
+
+  mark_types.keys.each do |mark_name|
+    scope :mark_name, ->{where mark_type: Settings.send(mark_name)}
+  end
 
   private
   def create_mark_activity
