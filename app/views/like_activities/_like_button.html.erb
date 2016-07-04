@@ -1,0 +1,5 @@
+<%= link_to user_like_activities_path(current_user,
+  like_activity: {activity_id: activity.id}), method: :post, remote: :true do %>
+  <i class="glyphicon glyphicon-thumbs-up"></i>
+<% end %>
+

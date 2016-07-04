@@ -74,6 +74,10 @@ class User < ActiveRecord::Base
     following.include? other_user
   end
 
+  def like_activity? activity
+    like_activities.find_by(activity_id: activity.id).present?
+  end
+
   private
   def avatar_size
     if avatar.size > 5.megabytes
