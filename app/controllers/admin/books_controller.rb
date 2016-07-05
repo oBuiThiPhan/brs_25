@@ -3,7 +3,7 @@ class Admin::BooksController < ApplicationController
   before_action :get_categories, except: [:index]
 
   def index
-    @books = Book.search(params[:search]).order("title")
+    @books = Book.search(params[:search], params[:rate_score]).order("title")
   end
 
   def new
