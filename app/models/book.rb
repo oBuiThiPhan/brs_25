@@ -20,11 +20,11 @@ class Book < ActiveRecord::Base
       joins(:category).where("(books.title LIKE :getsearch
         OR books.author LIKE :getsearch
         OR categories.title LIKE :getsearch)
-        AND books.rate_score >= :rate",
-        getsearch: "%#{search}%", rate: rate)
+        AND (books.rate_score >= :rate AND books.rate_score < :rate1)",
+        getsearch: "%#{search}%", rate: rate, rate1: (rate.to_i + 1))
     elsif search.present? || rate.present?
       if search.blank?
-        where("rate_score >= ?", rate)
+        where("rate_score >= ? AND rate_score < ?", rate, (rate.to_i + 1))
       else
         joins(:category).where("books.title LIKE :getsearch
           OR books.author LIKE :getsearch
