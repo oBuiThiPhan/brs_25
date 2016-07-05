@@ -53,6 +53,8 @@ en:
       comment: "Comment"
 
   views:
+    mark:
+      favorite: "Favorite"
     activities:
       ago: "ago"
       you: "You"

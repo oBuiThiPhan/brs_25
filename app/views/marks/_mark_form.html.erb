@@ -1,9 +1,14 @@
 <%= form_for [@book, @user_book] do |f| %>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.hidden_field :book_id %>
-
   <%= f.submit t("views.book.show.markas"), class: "btn btn-primary" %>
+
+  <%= f.label :favorite, class: "checkbox inline" do %>
+    <%= f.check_box :favorite, {}, "true", "false" %>
+    <span><%= t "views.mark.favorite" %></span>
+  <% end %>
+
   <span>
-    <%= f.select :mark_type, Mark.mark_types.keys %>
+    <%= f.select :mark_type, Mark.mark_types.keys, include_blank: true %>
   </span>
 <% end %>

@@ -28,9 +28,9 @@ ActiveRecord::Schema.define(version: 20160629074306) do
     t.string   "author"
     t.integer  "number_of_pages"
     t.datetime "publish_date"
-    t.decimal  "rate_score"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.decimal  "rate_score",      default: 0.0
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.string   "image"
   end
 
@@ -59,11 +59,12 @@ ActiveRecord::Schema.define(version: 20160629074306) do
     t.integer  "user_id"
     t.integer  "book_id"
     t.integer  "mark_type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "favorite",   default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
-  add_index "marks", ["user_id", "book_id"], name: "index_marks_on_user_id_and_book_id", unique: true
+  add_index "marks", ["user_id", "book_id", "mark_type"], name: "index_marks_on_user_id_and_book_id_and_mark_type", unique: true
 
   create_table "relationships", force: :cascade do |t|
     t.integer  "follower_id"
@@ -100,9 +101,9 @@ ActiveRecord::Schema.define(version: 20160629074306) do
     t.string   "password"
     t.string   "password_confirmation"
     t.string   "avatar"
-    t.boolean  "is_admin"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.boolean  "is_admin",              default: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.string   "password_digest"
     t.string   "remember_digest"
   end

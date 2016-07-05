@@ -15,6 +15,9 @@ class Book < ActiveRecord::Base
     ->(user){where(id: Mark.send(name).where(user_id: user.id).pluck(:book_id))}
   end
 
+  scope :favorite_books,
+    ->(user){where(id: Mark.favorite.where(user_id: user.id).pluck(:book_id))}
+
   def self.search(search, rate)
     if search.present? && rate.present?
       joins(:category).where("(books.title LIKE :getsearch
