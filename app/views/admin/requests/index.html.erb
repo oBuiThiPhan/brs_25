@@ -3,6 +3,7 @@
 <table class="table table-hover">
   <tr>
     <th><%= t "views.admin.requests.index.id" %></th>
+    <th><%= t "views.admin.requests.index.onwer" %></th>
     <th><%= t "views.admin.requests.index.book_title" %></th>
     <th><%= t "views.admin.requests.index.book_author" %></th>
     <th><%= t "views.admin.requests.index.content" %></th>
@@ -11,6 +12,7 @@
   <% @requests.each do |request| %>
     <tr>
       <td> <%= request.id %> </td>
+      <td> <%= request.user.name %> </td>
       <td> <%= request.book_title %> </td>
       <td> <%= request.book_author %> </td>
       <td> <%= request.content %> </td>

@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
-  before_action :load_book
-  before_action :load_review
-  before_action :load_comment
+  before_action :logged_in_user
+  before_action :correct_user, only: [:update, :destroy]
+  before_action :load_book, :load_review, :load_comment
 
   def new
     @comment = @review.comments.build
