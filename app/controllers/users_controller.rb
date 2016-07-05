@@ -1,24 +1,26 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update]
   before_action :correct_user, only: [:edit, :update]
+  before_action :load_user, only: [:show, :edit, :update]
 
   def new
     @user = User.new
   end
 
   def index
-    @users = User.order("id DESC").paginate page: params[:page],
+    @users = User.not_is_admin.order("created_at DESC").paginate page: params[:page],
       per_page: Settings.per_page
   end
 
   def show
-    @user = User.find_by id: params[:id]
     if @user.nil?
       flash[:warning] = t "views.users.show.nouser"
       redirect_to root_url
     end
+
     @activities = @user.activities.order("created_at desc").limit(100)
       .paginate page: params[:page], per_page: Settings.per_page
+
     @reading_books = Book.reading_books(@user)
     @read_books = Book.read_books(@user)
     @favorite_books = Book.favorite_books(@user)
@@ -37,11 +39,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find_by id: params[:id]
   end
 
   def update
-    @user = User.find_by id: params[:id]
     if @user.update_attributes user_params
       flash[:success] = t "controllers.flash.common.update_success",
         objects: t("activerecord.model.user")
@@ -57,8 +57,12 @@ class UsersController < ApplicationController
       :password_confirmation, :avatar
   end
 
+  def load_user
+    @user = User.not_is_admin.find_by id: params[:id]
+  end
+
   def correct_user
-    @user = User.find_by id: params[:id]
+    @user = User.not_is_admin.find_by id: params[:id]
     redirect_to root_url unless @user.is_user? current_user
   end
 
