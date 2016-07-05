@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :logged_in_user, :load_book
+  before_action :correct_user, only: [:update, :destroy]
   before_action :load_review, only: [:edit, :update, :destroy]
 
   def new
